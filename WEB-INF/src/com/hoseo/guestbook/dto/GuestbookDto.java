@@ -8,6 +8,20 @@ public class GuestbookDto {
 	private String wdate;
 	private String delyn;
 
+	public GuestbookDto() {
+
+	}
+
+	public GuestbookDto(int seq, String title, String contents, String writer,
+			String wdate, String delyn) {
+		this.seq = seq;
+		this.title = title;
+		this.contents = contents;
+		this.writer = writer;
+		this.wdate = wdate;
+		this.delyn = delyn;
+	}
+
 	public int getSeq() {
 		return seq;
 	}

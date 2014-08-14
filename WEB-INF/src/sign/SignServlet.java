@@ -85,7 +85,7 @@ public class SignServlet extends HttpServlet {
 
 				System.out.println("login ok");
 			}
-
+			
 			// 로그인 완료 페이지를 보여준다.
 			RequestDispatcher rd = req
 					.getRequestDispatcher("/signup/signin_ok.jsp");

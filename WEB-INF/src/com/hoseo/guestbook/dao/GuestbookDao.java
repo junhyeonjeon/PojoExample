@@ -1,35 +1,36 @@
 package com.hoseo.guestbook.dao;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import com.hoseo.guestbook.dto.GuestbookDto;
+
+import dbtabase.common.DBManager;
 
 public class GuestbookDao {
 	ArrayList<GuestbookDto> list = new ArrayList<GuestbookDto>();
 
+	DBManager db = new DBManager();
+	String sql, title, contents, writer, wdate;
+	int seq;
+
 	// 생성자
 	public GuestbookDao() {
+
 		GuestbookDto dto = new GuestbookDto();
-		dto.setSeq(1);
-		dto.setTitle("방문1");
-		dto.setContents("복 많이 받으셈 1");
-		dto.setWriter("방문자1");
-		dto.setWdate("2014-08-12");
-		list.add(dto);
+		sql = "select * from guestbook";
+		ArrayList<HashMap> dblist = db.getList(sql);		
 
-		dto.setSeq(2);
-		dto.setTitle("방문2");
-		dto.setContents("복 많이 받으셈 2");
-		dto.setWriter("방문자2");
-		dto.setWdate("2014-08-13");
-		list.add(dto);
+		for (int i = 0; i < dblist.size(); i++) {
+			HashMap<String, String> map = dblist.get(i);
 
-		dto.setSeq(3);
-		dto.setTitle("방문3");
-		dto.setContents("복 많이 받으셈 3");
-		dto.setWriter("방문자3");
-		dto.setWdate("2014-08-13");
-		list.add(dto);
+			seq = Integer.parseInt(map.get("SEQ"));
+			title = map.get("TITLE");
+			contents = map.get("CONTENTS");
+			writer = map.get("WRITER");
+			wdate = map.get("WDATE");
+			list.add(new GuestbookDto(seq, title, contents, writer, wdate, "n"));
+		}
 	}
 
 	public ArrayList<GuestbookDto> getList() {

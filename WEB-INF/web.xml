@@ -34,4 +34,13 @@
 	<url-pattern>/Sign.do</url-pattern>
 </servlet-mapping>
 
+<servlet>
+	<servlet-name>Util</servlet-name>
+	<servlet-class>com.hoseo.common.Util</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>Util</servlet-name>
+	<url-pattern>/Util.do</url-pattern>
+</servlet-mapping>
+
 </web-app>
