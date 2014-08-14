@@ -1,6 +1,6 @@
 function goWrite() {
 	var frm = document.guestbookForm;
-	frm.action = "/PojoExample/Util.do";
+	frm.action = "/PojoExample/guestbook/list_ok.jsp";
 
 	if (!frm.writer.value) {
 		alert("작성자명을 입력해주세요");

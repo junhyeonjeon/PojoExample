@@ -1,4 +1,4 @@
-package dbtabase.common;
+package database.common;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -5,13 +5,13 @@ import java.util.HashMap;
 
 import com.hoseo.guestbook.dto.GuestbookDto;
 
-import dbtabase.common.DBManager;
+import database.common.DBManager;
 
 public class GuestbookDao {
 	ArrayList<GuestbookDto> list = new ArrayList<GuestbookDto>();
 
 	DBManager db = new DBManager();
-	String sql, title, contents, writer, wdate;
+	String sql, title, contents, writer, wdate, delyn;
 	int seq;
 
 	// 생성자
@@ -29,7 +29,9 @@ public class GuestbookDao {
 			contents = map.get("CONTENTS");
 			writer = map.get("WRITER");
 			wdate = map.get("WDATE");
-			list.add(new GuestbookDto(seq, title, contents, writer, wdate, "n"));
+			delyn = map.get("DELYN");
+			
+			list.add(new GuestbookDto(seq, title, contents, writer, wdate, delyn));
 		}
 	}
 
