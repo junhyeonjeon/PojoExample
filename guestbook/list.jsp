@@ -24,7 +24,7 @@
 	</form>
 	<br>
 	<br>
-
+	
 	<%
 		GuestbookDao dao = new GuestbookDao();
 		ArrayList<GuestbookDto> list = dao.getList();
@@ -45,5 +45,6 @@
 			}
 		}
 	%>
+	
 </body>
 </html>

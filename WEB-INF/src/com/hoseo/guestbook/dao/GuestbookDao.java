@@ -18,9 +18,9 @@ public class GuestbookDao {
 	public GuestbookDao() {
 
 		GuestbookDto dto = new GuestbookDto();
-		sql = "select * from guestbook";
-		ArrayList<HashMap> dblist = db.getList(sql);		
-
+		sql = "select * from guestbook order by seq desc";
+		ArrayList<HashMap> dblist = db.getList(sql);
+		
 		for (int i = 0; i < dblist.size(); i++) {
 			HashMap<String, String> map = dblist.get(i);
 
